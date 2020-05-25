@@ -11,15 +11,12 @@ data_path = os.path.join('_data', exp_name)
 fig_path = os.path.join('_data', exp_name)
 os.makedirs(fig_path, exist_ok=True)
 
-df_est = pd.read_csv(os.path.join(data_path, 'Insecticide_resistance_recessive_establishment_rates.csv'))
-df_est_full = pd.read_csv(os.path.join(data_path, 'Insecticide_resistance_recessive_establishment_rates_full.csv'))
-df_inset = pd.read_csv(os.path.join(data_path, 'Insecticide_resistance_recessive_inset_data.csv'))
-df_inset_full = pd.read_csv(os.path.join(data_path, 'Insecticide_resistance_recessive_inset_data_full.csv'))
+df_est = pd.read_csv(os.path.join(data_path, 'insecticide_resistance_establishment.csv'))
+df_inset = pd.read_csv(os.path.join(data_path, 'insecticide_resistance_inset.csv'))
 
 channels = ['Annual EIR']
 groupby_columns = ['Mutation_Rate2']
 colors = ['#2cbcb2', '#5e495a', '#d44e28', '#56445D', 'r']
-run_numbers = list(df_inset_full['Run_Number'].unique())
 
 if plot_inset:
     for channel in channels:
@@ -28,7 +25,7 @@ if plot_inset:
                 fig = plt.figure()
                 fig.set_size_inches((9.951, 6.72))
                 for i, (start, startdf) in enumerate(gdf.groupby('Label')):
-                    df_label = df_inset_full[df_inset_full['Label'] == start]
+                    df_label = df_inset[df_inset['Label'] == start]
                     startdf = startdf[:6*365]
                     eir = sum(startdf['Annual EIR'][-365:])
                     clinical_cases = sum(startdf['Clinical Cases'])

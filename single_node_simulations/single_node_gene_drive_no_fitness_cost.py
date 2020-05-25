@@ -75,15 +75,7 @@ if __name__ == "__main__":
         for likelihood in copy_to_likelihoods
     ]
 
-    mendelian = [
-        [ModFn(DTKConfigBuilder.set_param, 'Run_Number', seed),
-         ModFn(add_release, label='Mendelian', number=1000000)
-         ]
-        for seed in range(num_seeds)
-    ]
-
-    # builder = ModBuilder.from_list(gene_drive + mendelian)
-    builder = ModBuilder.from_list(mendelian)
+    builder = ModBuilder.from_list(gene_drive)
 
     # Call output reporters
     cb.add_reports(BaseVectorGeneticsReport(type='ReportVectorGenetics',
