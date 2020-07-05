@@ -10,4 +10,4 @@ Input files and executable are in ./input_files and ./EXE, respectively.
 
 Single node simulations can be found in ./single_node_simulations.
 
-Spatial simulations can be found in ./spatial_gene_drive
+Spatial simulations can be found in ./spatial_gene_drive.
