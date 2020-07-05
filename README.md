@@ -6,4 +6,8 @@ Requirements: dtk-tools package dtk-tools-malaria package malaria-toolbox packag
 
 COMPS system for HPC job management Email support@idmod.org
 
-Input files and executable are in ./input_files abs ./EXE, respectively.
+Input files and executable are in ./input_files and ./EXE, respectively.
+
+Single node simulations can be found in ./single_node_simulations.
+
+Spatial simulations can be found in ./spatial_gene_drive
